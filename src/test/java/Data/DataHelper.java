@@ -28,5 +28,4 @@ public class DataHelper {
     public static AuthInfo getVisualUser() {
         return new AuthInfo("visual_user", "secret_sauce");
     }
-
 }

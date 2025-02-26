@@ -23,6 +23,9 @@ public class ProductPage {
     private static final SelenideElement onesieDelBut = $("button[data-test='remove-sauce-labs-onesie']");
     private static final SelenideElement tShirtRedDelBut = $("button[data-test='remove-test.allthethings()-t-shirt-(red)']");
 
+    private static final SelenideElement menuBut = $("button[id='react-burger-menu-btn']");
+    private static final SelenideElement logOut = $("[id='logout_sidebar_link']");
+
 
     public ProductPage() {
         title.shouldBe(Condition.visible);
@@ -66,4 +69,10 @@ public class ProductPage {
     public void delFromCartRedTShirt(){
         tShirtRedDelBut.click();
     }
+
+    public void logOut() {
+        menuBut.click();
+        logOut.click();
+    }
+
 }

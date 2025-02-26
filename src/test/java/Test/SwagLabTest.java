@@ -7,6 +7,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -26,6 +27,11 @@ public class SwagLabTest {
         loginPage = Selenide.open("https://www.saucedemo.com", LoginPage.class);
     }
 
+    @AfterEach
+    public void logOut() {
+        productPage.logOut();
+    }
+
     @Test
     public void shouldSuccessLogin() {
         var authInfo = DataHelper.getStandardUser();
@@ -40,6 +46,9 @@ public class SwagLabTest {
         productPage.addToCartBackpack();
         productPage.addToCartTShirt();
         cartBadge.shouldBe(Condition.visible).shouldHave(Condition.text("2"));
+        productPage.delFromCartBackpack();
+        productPage.delFromCartTShirt();
+        cartBadge.shouldBe(Condition.hidden);
     }
     @Test
     @DisplayName("Добавить 4 товара в корзину и удалить последний")

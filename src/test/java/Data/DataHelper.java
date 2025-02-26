@@ -10,22 +10,22 @@ public class DataHelper {
         String password;
     }
 
-    public static AuthInfo standardUser() {
+    public static AuthInfo getStandardUser() {
         return new AuthInfo("standard_user", "secret_sauce");
     }
-    public static AuthInfo lockedUser() {
+    public static AuthInfo getLockedUser() {
         return new AuthInfo("locked_out_user", "secret_sauce");
     }
-    public static AuthInfo problemUser() {
+    public static AuthInfo getProblemUser() {
         return new AuthInfo("problem_user", "secret_sauce");
     }
-    public static AuthInfo perfomanceUser() {
+    public static AuthInfo getPerfomanceUser() {
         return new AuthInfo("performance_glitch_user", "secret_sauce");
     }
-    public static AuthInfo errorUser() {
+    public static AuthInfo getErrorUser() {
         return new AuthInfo("error_user", "secret_sauce");
     }
-    public static AuthInfo visualUser() {
+    public static AuthInfo getVisualUser() {
         return new AuthInfo("visual_user", "secret_sauce");
     }
 

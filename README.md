@@ -1,0 +1,1 @@
+[![.github/workflows/gradle.yml](https://github.com/Kocherg1nVA/SwagLab/actions/workflows/gradle.yml/badge.svg)](https://github.com/Kocherg1nVA/SwagLab/actions/workflows/gradle.yml)

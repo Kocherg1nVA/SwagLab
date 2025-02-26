@@ -1,6 +1,7 @@
 name: Java CI with Gradle
 
 on: [push, pull_request]
+
 jobs:
   build:
 
@@ -14,7 +15,6 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Grant execute permission for gradlew
-        uses: chmod +x ./gradlew
+        run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew test -Dselenide.headless=true -- info
-
+        run: ./gradlew test --info -Dselenide.headless=true
